@@ -6,6 +6,25 @@
  * ie: "cat" => "tac"
  */
 
+ function firstReverse(str){
+ 	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+ 	//Step 2: use the split() method to return a new array
+ 	var splitString = str.split('');
+ 	//Step 3: use reverse method
+ 	var reverseArray = splitString.reverse();
+ 	//Step 4: use the join method
+ 	var joinArray = reverseArray.join('');
+ 	//Return
+ 	return joinArray;
+ }
+
+firstReverse('Aloha');
+ //console.log(firstReverse('Aloha'));
+
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
@@ -14,6 +33,24 @@
  * ie: "cake" => "acek"
  */
 
+function alphaOrder(str){
+	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+	//Step 2: use split() method to return new array
+	var splitString = str.split('');
+	//Step 3: use sort() method
+	var sortArray = splitString.sort();
+	//Step 4: convert back to string
+	joinArray = splitString.join('');
+	//return
+	return joinArray;
+}
+alphaOrder('alphabetical');
+//console.log(alphaOrder('alphabetical'));
+
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
  * return the number of vowels in the string
@@ -21,6 +58,27 @@
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
+
+ function vowelCount(str){
+ 	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+ 	//Step 2: set variables for list and count
+ 	var vowels = 'aeiouAEIOU';
+ 	var count = 0;
+ 	//Step 3: set for loop
+ 	for(var i = 0; i < str.length; i++){
+ 		if(vowels.indexOf(str[i]) !== -1)
+ 		{
+ 			count += 1;
+ 		}
+ 	}
+ 	return count;
+ }
+vowelCount('everything but the kitchen sink');
+//console.log(vowelCount('everything but the kitchen sink'));
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -31,6 +89,20 @@
  * ie: 68 => 1:8
  */
 
+function timeConvert(str){
+	//Step 1: if parameter is not equal to number return null
+ 	if(typeof str !== 'number'){
+ 		return null;
+ 	}
+ 	//Step 2: set varibles for hour and minutes
+ 	var hour = Math.floor(str/60); //Math.floor will ignore all the numbers after the decimal
+ 	var minutes = str - (hour * 60); //This is taking 125 - 120 = 5
+ 	//Step 3: return
+ 	return hour + ':' + minutes;
+}
+timeConvert(125);
+//console.log(timeConvert(125));
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -40,6 +112,20 @@
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+function repeatString(str,num){
+	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+ 	//Step 2: if parameer is not equal to number return null
+ 	if(typeof num !== 'number'){
+ 		return null;
+ 	}
+
+	return str.repeat(num);
+}
+repeatString('Aloha',10);
+//console.log(repeatString('Aloha',10));
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -56,9 +142,9 @@
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
-}
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
+    timeConvert: timeConvert,
+    repeatString: repeatString,
+};
