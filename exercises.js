@@ -77,8 +77,8 @@ alphaOrder('alphabetical');
  	}
  	return count;
  }
-console.log(vowelCount('everything but the kitchen sink'));
-
+vowelCount('everything but the kitchen sink');
+//console.log(vowelCount('everything but the kitchen sink'));
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -88,6 +88,21 @@ console.log(vowelCount('everything but the kitchen sink'));
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
+
+function timeConvert(str){
+	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'number'){
+ 		return null;
+ 	}
+ 	//Step 2: set varibles for hour and minutes
+ 	var hour = Math.floor(str/60);
+ 	var minutes = str - (hour * 60);
+ 	//Step 3: return
+ 	return hour + ':' + minutes;
+}
+timeConvert(125);
+//console.log(timeConvert(125));
+
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -117,6 +132,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
-    repeatString: null
+    timeConvert: timeConvert,
+    repeatString: repeatString,
 };
