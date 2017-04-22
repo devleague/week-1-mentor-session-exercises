@@ -90,19 +90,18 @@ vowelCount('everything but the kitchen sink');
  */
 
 function timeConvert(str){
-	//Step 1: if parameter is not equal to string return null
+	//Step 1: if parameter is not equal to number return null
  	if(typeof str !== 'number'){
  		return null;
  	}
  	//Step 2: set varibles for hour and minutes
- 	var hour = Math.floor(str/60);
- 	var minutes = str - (hour * 60);
+ 	var hour = Math.floor(str/60); //Math.floor will ignore all the numbers after the decimal
+ 	var minutes = str - (hour * 60); //This is taking 125 - 120 = 5
  	//Step 3: return
  	return hour + ':' + minutes;
 }
 timeConvert(125);
 //console.log(timeConvert(125));
-
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -113,6 +112,20 @@ timeConvert(125);
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+function repeatString(str,num){
+	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+ 	//Step 2: if parameer is not equal to number return null
+ 	if(typeof num !== 'number'){
+ 		return null;
+ 	}
+
+	return str.repeat(num);
+}
+repeatString('Aloha',10);
+//console.log(repeatString('Aloha',10));
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
