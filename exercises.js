@@ -6,6 +6,20 @@
  * ie: "cat" => "tac"
  */
 
+ function firstReverse(str){
+ 	//Step 1: use the split() method to return a new array
+ 	var splitString = str.split('');
+ 	//Step 2: use reverse method
+ 	var reverseArray = splitString.reverse();
+ 	//Step 3: use the join method
+ 	var joinArray = reverseArray.join('');
+ 	//Return
+ 	return joinArray;
+ }
+
+firstReverse('Aloha');
+ //console.log(firstReverse('Aloha'));
+
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
@@ -13,6 +27,19 @@
  * @return {string} in alphabetical order
  * ie: "cake" => "acek"
  */
+
+function alphaOrder(str){
+	//Step 1: use split() method to return new array
+	var splitString = str.split('');
+	//Step 2: use sort() method
+	var sortArray = splitString.sort();
+	//Step 3: convert back to string
+	joinArray = splitString.join('');
+	//return
+	return joinArray;
+}
+alphaOrder('alphabetical');
+//console.log(alphaOrder('alphabetical'));
 
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
