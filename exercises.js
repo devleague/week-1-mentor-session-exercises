@@ -34,11 +34,16 @@ firstReverse('Aloha');
  */
 
 function alphaOrder(str){
-	//Step 1: use split() method to return new array
+	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+	//Step 2: use split() method to return new array
 	var splitString = str.split('');
-	//Step 2: use sort() method
+	//Step 3: use sort() method
 	var sortArray = splitString.sort();
-	//Step 3: convert back to string
+	//Step 4: convert back to string
 	joinArray = splitString.join('');
 	//return
 	return joinArray;
@@ -55,10 +60,15 @@ alphaOrder('alphabetical');
  */
 
  function vowelCount(str){
- 	//Step 1: set variables for list and count
+ 	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+ 	//Step 2: set variables for list and count
  	var vowels = 'aeiouAEIOU';
  	var count = 0;
- 	//Step 2: set for loop
+ 	//Step 3: set for loop
  	for(var i = 0; i < str.length; i++){
  		if(vowels.indexOf(str[i]) !== -1)
  		{
