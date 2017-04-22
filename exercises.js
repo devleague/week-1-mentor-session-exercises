@@ -7,11 +7,16 @@
  */
 
  function firstReverse(str){
- 	//Step 1: use the split() method to return a new array
+ 	//Step 1: if parameter is not equal to string return null
+ 	if(typeof str !== 'string'){
+ 		return null;
+ 	}
+
+ 	//Step 2: use the split() method to return a new array
  	var splitString = str.split('');
- 	//Step 2: use reverse method
+ 	//Step 3: use reverse method
  	var reverseArray = splitString.reverse();
- 	//Step 3: use the join method
+ 	//Step 4: use the join method
  	var joinArray = reverseArray.join('');
  	//Return
  	return joinArray;
@@ -49,6 +54,22 @@ alphaOrder('alphabetical');
  * ie: "oreo" => 3
  */
 
+ function vowelCount(str){
+ 	//Step 1: set variables for list and count
+ 	var vowels = 'aeiouAEIOU';
+ 	var count = 0;
+ 	//Step 2: set for loop
+ 	for(var i = 0; i < str.length; i++){
+ 		if(vowels.indexOf(str[i]) !== -1)
+ 		{
+ 			count += 1;
+ 		}
+ 	}
+ 	return count;
+ }
+console.log(vowelCount('everything but the kitchen sink'));
+
+
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -83,9 +104,9 @@ alphaOrder('alphabetical');
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
     timeConvert: null,
     repeatString: null
-}
+};
