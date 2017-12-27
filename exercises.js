@@ -5,14 +5,27 @@
  * @return {string} reversed
  * ie: "cat" => "tac"
  */
-
- /** Function: alphaOrder
+function firstReverse(str){
+    if (typeof str !== 'string') {
+        return null;
+    } else {
+        return str.split('').reverse().join('');
+    }
+};
+/** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
  * @param {string} str
  * @return {string} in alphabetical order
  * ie: "cake" => "acek"
  */
+function alphaOrder(str) {
+    if (typeof str !== 'string') {
+        return null;        
+    } else {
+        return str.split('').sort().join('')
+    }
+};
 
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
@@ -21,7 +34,23 @@
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
-
+var vowelCount = function(str) {
+    var vowels = 'aAeEiIoOuU';
+    var result = 0;
+    if (typeof str === 'string') {
+        for (var i = 0; i < str.length; i++) {
+            if (vowels.indexOf(str[i])!== -1) {
+                result += 1;
+            }
+        }
+        return result;
+            } else {
+                return null;
+            }
+            
+        };
+            
+        
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
  * return the number of hours and minutes. Seperate the number of hours
@@ -30,7 +59,15 @@
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
-
+var timeConvert = function(str) {
+    var hrs = Math.floor(str/60);
+    var mins = str % 60;
+    if (typeof str === 'number'){
+        return hrs + ':' + mins;
+    }else{
+        return null;
+    }
+}
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -39,7 +76,13 @@
  * @return {string} repeated num times
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
-
+var repeatString = function(str,num) {
+    if (num > 0) {
+        return str.repeat(num);
+    } else {
+        return null;
+    }
+};
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -56,9 +99,9 @@
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
+    timeConvert: timeConvert,
+    repeatString: repeatString
 }
