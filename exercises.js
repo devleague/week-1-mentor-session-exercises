@@ -73,6 +73,12 @@ function alphaOrder(str) {
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+ function repeatString(str, times) {
+    if ((typeof str) !== 'string' || (typeof times) !== 'number' ) {
+        return null;
+    }
+    return str.repeat(times);
+ }
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -93,5 +99,5 @@ module.exports = {
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
     timeConvert: timeConvert,
-    repeatString: null
+    repeatString: repeatString
 }
