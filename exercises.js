@@ -6,6 +6,14 @@
  * ie: "cat" => "tac"
  */
 
+ function firstReverse (str) {
+    if ((typeof str) !== 'string') {
+        return null;
+    }
+    var reverse = str.split('').reverse().join('');
+    return reverse;
+ }
+
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
  * return the string in alphabetical order
@@ -14,6 +22,14 @@
  * ie: "cake" => "acek"
  */
 
+function alphaOrder(str) {
+    if ((typeof str) !== 'string') {
+        return null;
+    }
+    var alpha = str.split('').sort().join('');
+    return alpha;
+}
+
  /** Function: vowelCount
  * The function will take the num parameter being passed in and
  * return the number of vowels in the string
@@ -21,6 +37,14 @@
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
+
+ function vowelCount(str) {
+    if ((typeof str) !== 'string') {
+        return null;
+    }
+    var count = str.match(/[aeiou]/ig).length;
+    return count;
+ }
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -31,6 +55,15 @@
  * ie: 68 => 1:8
  */
 
+ function timeConvert(str) {
+    if ((typeof str) !== 'number') {
+        return null;
+    }
+    var hour = Math.floor(str / 60);
+    var minutes = str % 60;
+    return hour + ':' + minutes;
+ }
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -40,6 +73,12 @@
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+ function repeatString(str, times) {
+    if ((typeof str) !== 'string' || (typeof times) !== 'number' ) {
+        return null;
+    }
+    return str.repeat(times);
+ }
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -56,9 +95,9 @@
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
+    timeConvert: timeConvert,
+    repeatString: repeatString
 }
